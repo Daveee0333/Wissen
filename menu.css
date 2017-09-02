@@ -1,0 +1,58 @@
+.navbar-brand{
+	font-size: 40px;
+	padding: 18px 15px;
+}
+.navbar .navbar-nav > li > a{
+	margin-top: 5px;
+	margin-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.navbar .navbar-nav > li > .link:hover{
+	transition: all .2s;
+	color: #ffd600;
+}
+.navbar .navbar-left{
+	/*margin-left: 20px;*/
+	padding-left: 20px;
+}
+.navbar .navbar-left .search{
+	color: white;
+}
+/*lg*/
+@media(min-width: 1200px){
+	form table td{
+		width: 85%;
+	}
+}
+/*md*/
+@media(min-width: 992px) and (max-width: 1199px) {
+	form table td{
+		width: 75%;
+	}	
+}
+/*sm*/
+@media(min-width: 768px) and (max-width: 991px){
+	form table td{
+		width: 50px;
+	}
+}
+/*xs*/
+@media(max-width: 761px){
+	form table td{
+		width: 100%;
+	}
+}
+.dropdown-menu{
+	background-color: #303030;
+	margin: 0;
+	padding: 0;
+	border: 0;	
+}
+.dropdown-menu > li > a{
+	color: white;
+}
+.dropdown-menu > li> a:hover{
+	background-color: #4a148a;
+	color: white;
+}

@@ -1,0 +1,33 @@
+.footer{
+	width: 100%;
+	background-color: rgb(30, 30, 30);
+	color: white;
+	resize: unset;
+	margin-top: 30px;
+}
+.footer > .container{
+	padding: 30px;
+}
+.footer img{
+	margin-bottom: 10px;
+}
+#texto{
+	border-radius: 2px;
+	font-size: 20px;
+	height: 87px; 
+	resize: none;
+
+}
+.enviar{
+	color: white !important;
+}
+.footer a{
+	text-decoration: none;
+	float: left;
+	clear: both;
+	color: white;
+	padding: 2px;
+}
+.footer a:hover{
+	color: grey;
+}
