@@ -1,0 +1,133 @@
+body{
+	background-image: url(../Imagens/3131.png);
+	background-size: 100%;
+	background-repeat: repeat;
+}
+#conteudo{
+	background-color: #fff;
+}
+#botao{
+	background-color: #43075C;
+	color: white;
+}
+.select{
+	width: 100%;
+	height: 2.5em;
+	color: black;
+}
+#conteudo{
+	background-color: rgb(21, 21, 21);
+	color: white;
+}
+#form-body{
+	background-color: rgb(35, 35, 35);
+}
+.col-centered .col-md-8, .col-centered .col-lg-8, .col-centered .col-sm-8{
+	margin-left: 16.66666666%;
+}
+@media(max-width: 767px){
+	.col-centered .col-xs-12{
+		margin-left: 0;
+	}
+}
+.sexo input[type="radio"]{
+	display: none;
+}
+.sexo label{
+	cursor: pointer;
+}
+.sexo input[type="radio"] + label:before{
+	border: 1px solid rgb(55, 55, 55);
+	content: "\00a0";
+	display: inline-block;
+	font: 16px/1em sans-serif;
+	height: 16px;
+	margin: 0 .25em 0 0;
+	padding:0;
+	vertical-align: top;
+	width: 16px;
+	border-radius:20px;
+	transition: all .5s;
+}
+.sexo input[type="radio"]:checked + label:before{
+	border: 1px solid #d49802;
+	background: #d49802;
+}
+.sexo input[type="radio"]:checked + label:after{
+	font-weight: bold;
+}
+.input-file-container {
+	position: relative;
+	width: 100%;
+} 
+.js .input-file-trigger {
+	display: block;
+	padding: 14px 45px;
+	background: rgb(155, 155, 155);
+	color: white;
+	font-size: 2em;
+	text-align: center;
+	transition: all .5s;
+	cursor: pointer;
+}
+.js .input-file {
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	opacity: 0;
+	padding: 14px 0;
+	cursor: pointer;
+}
+.js .input-file:hover + .input-file-trigger,
+.js .input-file:focus + .input-file-trigger,
+.js .input-file-trigger:hover,
+.js .input-file-trigger:focus {
+	background: rgb(67, 7, 92);
+	color: white;
+}
+
+.file-return {
+	margin: 0;
+}
+.file-return:not(:empty) {
+	margin: 1em 0;
+}
+.js .file-return {
+	font-style: italic;
+	font-size: .9em;
+	font-weight: bold;
+}
+.js .file-return:not(:empty):before {
+	content: "Arquivo Selecionado: ";
+	font-style: normal;
+	font-weight: normal;
+}
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search-md]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+	border-bottom: 1px solid #d49802;
+	box-shadow: 0 1px 0 0 #d49802;
+	color: white;
+}
+
+input[type=text]:focus:not([readonly]) + label,
+input[type=password]:focus:not([readonly]) + label,
+input[type=email]:focus:not([readonly]) + label,
+input[type=url]:focus:not([readonly]) + label,
+input[type=time]:focus:not([readonly]) + label,
+input[type=date]:focus:not([readonly]) + label,
+input[type=datetime-local]:focus:not([readonly]) + label,
+input[type=tel]:focus:not([readonly]) + label,
+input[type=number]:focus:not([readonly]) + label,
+input[type=search-md]:focus:not([readonly]) + label,
+textarea.materialize-textarea:focus:not([readonly]) + label {
+	color: #d49802;
+}
