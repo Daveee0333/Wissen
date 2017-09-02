@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<!-- Meta TAGS -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- JavaScript -->
+	<script type="text/javascript" src="./JS/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./MDB_3.4.1/MDB Free/js/mdb.min.js"></script>
+	<script type="text/javascript" src="./Holder/holder.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="MDB_3.4.1/MDB Free/css/mdb.min.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/menu.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/footer.css">
+	<!-- Fontes -->
+	<link rel="stylesheet" type="text/css" href="./CSS/Fontes.css">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<title>Wissen</title>
+	<style type="text/css">
+		*{font-family: 'Comfortaa', 'PT-Sans'}
+		body{
+			background-color: #191919;
+			color: white;
+		}
+		#dados{
+			margin-top: 70px;
+			padding-top: 70px;
+		}
+		#dados h4{
+			position: absolute;
+			margin-left: 50px;
+			padding-left: 50px;
+			font-size: 30px;
+			top: 60px;
+			left: 130px;
+		}
+		#dados ul li{
+			padding: 20px 0;
+		}
+		#dados .link{
+			font-size: 23px;
+			text-decoration: none;
+			color: white;
+		}
+		#dados .link:hover{
+			font-size: 23px;
+			text-decoration: none;
+			color: #d49802;
+		}
+		#dados .links{
+			padding-left: 15%;
+		}
+		.evseguidos{
+			margin-bottom: 50px;
+		}
+		.evseguidos h3{
+			margin-bottom: 30px;
+		}
+		.mseguidores{
+			margin-bottom: 50px;
+		}
+		.mseguidores h3{
+			margin-bottom: 30px; 
+		}
+		.carousel-control { 
+			width: 8%;
+			width: 0px;
+		}
+		.carousel-control.left,
+		.carousel-control.right { 
+			margin-right: 40px;
+			margin-left: 32px; 
+			background-image: none;
+			opacity: 1;
+			border-radius: 50%;
+		}
+		.carousel-control > a > span {
+			font-size: 29px !important;
+			color: #b388ff;
+		}
+		.carousel-control > a > span:hover {
+			font-size: 29px !important;
+			color: #8e24aa;
+		}
+
+		.carousel-col { 
+			position: relative; 
+			min-height: 1px; 
+			padding: 5px; 
+			float: left;
+		}
+
+		.active > div { display:none; }
+		.active > div:first-child { display:block; }
+
+		/*xs*/
+		@media (max-width: 767px) {
+			.carousel-inner .active.left { left: -100%; }
+			.carousel-inner .active.right { left: 100%; }
+			.carousel-inner .next        { left:  100%; }
+			.carousel-inner .prev		     { left: -100%; }
+			.carousel-col                { width: 100%; }
+			.active > div:first-child + div { display:block; }
+		}
+
+		/*sm*/
+		@media (min-width: 768px) and (max-width: 991px) {
+			.carousel-inner .active.left { left: -50%; }
+			.carousel-inner .active.right { left: 50%; }
+			.carousel-inner .next        { left:  50%; }
+			.carousel-inner .prev		     { left: -50%; }
+			.carousel-col                { width: 50%; }
+			.active > div:first-child + div { display:block; }
+		}
+
+		/*md*/
+		@media (min-width: 992px) and (max-width: 1199px) {
+			.carousel-inner .active.left { left: -50%; }
+			.carousel-inner .active.right { left: 50%; }
+			.carousel-inner .next        { left:  50%; }
+			.carousel-inner .prev		     { left: -50%; }
+			.carousel-col                { width: 50%; }
+			.active > div:first-child + div { display:block; }
+			.active > div:first-child + div + div { display:block; }
+		}
+
+		/*lg*/
+		@media (min-width: 1200px) {
+			.carousel-inner .active.left { left: -33%; }
+			.carousel-inner .active.right{ left:  33%; }
+			.carousel-inner .next        { left:  33%; }
+			.carousel-inner .prev		     { left: -33%; }
+			.carousel-col                { width: 33%; }
+			.active > div:first-child + div { display:block; }
+			.active > div:first-child + div + div { display:block; }
+			.active > div:first-child + div + div + div { display:block; }
+		}
+		#carousel-evseguidos{
+			height: 400px;
+		}
+		#carousel-evseguidos .item{
+			height: 400px;
+			background-color: transparent;
+		}
+		.card{
+			background-color: #313131;
+		}
+		.card .card-image img{
+			height: 250px;
+			width: 500px;
+		}
+		.card .card-content h5{
+			margin-top: 20px;
+			border-bottom: 1px solid #292929;
+		}
+		.card .card-footer{
+			padding-bottom: 20px;
+		}
+		.card .card-footer .opcoes{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		.card .card-footer .opcoes:after{
+			content: "";
+			clear: both;
+		}
+		.card .card-footer .col-xs-4, .card .card-footer .col-sm-3,
+		.card .card-footer .col-md-2, .card .card-footer .col-lg-1{
+			margin-right: 30px;
+			float: right;
+		}
+		.card .card-footer .opcao{
+			box-sizing: border-box;
+			float: none;
+			margin-left: 10px;
+			margin-top: 20px;
+			height: 20px;
+			width: 20px;
+			position: relative;
+		}
+		.card .card-footer .opcao label{
+			background-color: #313131;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin-bottom: 0px !important;
+			bottom: 1px;
+			cursor: pointer;
+			display:block;
+			position: absolute;
+			color: #b388ff;
+			padding-bottom: 20px;
+		}
+		.card .card-footer .opcoes input:focus + .i{
+			transition: all .2s;
+			color: #ffbb33;
+		}
+		.card .card-footer .opcoes input:checked + .i{
+			transition: all .2s;
+			color: #ffbb33;
+		}
+		.card .card-footer .opcoes input:focus + .c{
+			transition: all .2s;
+			color: #00C851;
+		}
+		.card .card-footer .opcoes input:checked + .c{
+			transition: all .2s;
+			color: #00C851;
+		}
+		.card .card-footer .opcoes input:focus + .n{
+			transition: all .2s;
+			color: #ff4444;
+		}
+		.card .card-footer .opcoes input:checked + .n{
+			transition: all .2s;
+			color: #ff4444;
+		}
+		.amigos img{
+			margin: 0 auto;
+			margin-bottom: 15px;
+			margin-top: 15px;
+		}
+		.amigos span{
+			font-size: 20px;
+			color: white;
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		#alterarFoto > div > h3{
+			padding-bottom: 15px;
+			padding-top: 15px;
+		}
+		#alterarFoto button[type="submit"]{
+			color: white;
+			margin-top: 10px;
+		}
+		.input-file-container {
+			position: relative;
+			width: 25%;
+			margin: 0 auto;
+			margin-top: 15px;
+		} 
+		.js .input-file-trigger {
+			display: block;
+			padding: 14px 45px;
+			background: rgb(155, 155, 155);
+			color: white;
+			font-size: 2em;
+			text-align: center;
+			transition: all .5s;
+			cursor: pointer;
+		}
+		.js .input-file {
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			opacity: 0;
+			padding: 14px 0;
+			cursor: pointer;
+		}
+		.js .input-file:hover + .input-file-trigger,
+		.js .input-file:focus + .input-file-trigger,
+		.js .input-file-trigger:hover,
+		.js .input-file-trigger:focus {
+			background: rgb(67, 7, 92);
+			color: white;
+		}
+
+		.file-return {
+			margin: 0;
+		}
+		.file-return:not(:empty) {
+			margin: 1em 0;
+		}
+		.js .file-return {
+			font-style: italic;
+			font-size: .9em;
+			font-weight: bold;
+		}
+		.js .file-return:not(:empty):before {
+			content: "Arquivo Selecionado: ";
+			font-style: normal;
+			font-weight: normal;
+		}
+		#informacoes .edicao{
+			margin-left: 13%;
+		}
+		#informacoes .edicao .form-group > label{
+			font-size: 20px;
+			margin-top: 20px;
+		}
+		#informacoes .edicao .form-group > label > i{
+			font-size: 30px;
+		}
+		#informacoes .edicao > .col-lg-6, #informacoes .edicao > .col-md-6, #informacoes .edicao > .col-sm-6 {
+			margin-left: 17%;
+		}
+		#informacoes button[type="submit"]{
+			margin-left: 29%;
+			color: white;
+		}
+		#configSeguranca .cog{
+			margin-left: 13%;
+		}
+		#configSeguranca .cog .form-group > label{
+			font-size: 20px;
+			margin-top: 20px;
+		}
+		#configSeguranca .cog .form-group > label[for="exibirPS"], #configSeguranca .cog .form-group > label[for="exibirS"]{
+			font-size: 15px;
+			margin-top: 0;
+		}
+		#configSeguranca .cog .form-group > label > i{
+			font-size: 30px;
+		}
+		#configSeguranca .cog > .col-lg-8, #configSeguranca .cog > .col-md-8, #configSeguranca .cog > .col-sm-8{
+			margin-left: 8%;
+		}
+		#configSeguranca .cog > .botao, #configSeguranca .cog > .botao, #configSeguranca .cog > .botao{
+			margin-left: 0;
+		}
+		#configSeguranca button[type="submit"]{
+			margin-left: 29%;
+			color: white;
+		}
+		input[type=text]:focus:not([readonly]),
+		input[type=password]:focus:not([readonly]),
+		input[type=email]:focus:not([readonly]),
+		input[type=url]:focus:not([readonly]),
+		input[type=time]:focus:not([readonly]),
+		input[type=date]:focus:not([readonly]),
+		input[type=datetime-local]:focus:not([readonly]),
+		input[type=tel]:focus:not([readonly]),
+		input[type=number]:focus:not([readonly]),
+		input[type=search-md]:focus:not([readonly]),
+		textarea.materialize-textarea:focus:not([readonly]) {
+			border-bottom: 1px solid #d49802;
+			box-shadow: 0 1px 0 0 #d49802;
+			color: white;
+		}
+		.form-group label.active{
+			color: #d49802;
+			transition: all .2s;
+		}
+
+		input[type=text]:focus:not([readonly]) + label,
+		input[type=password]:focus:not([readonly]) + label,
+		input[type=email]:focus:not([readonly]) + label,
+		input[type=url]:focus:not([readonly]) + label,
+		input[type=time]:focus:not([readonly]) + label,
+		input[type=date]:focus:not([readonly]) + label,
+		input[type=datetime-local]:focus:not([readonly]) + label,
+		input[type=tel]:focus:not([readonly]) + label,
+		input[type=number]:focus:not([readonly]) + label,
+		input[type=search-md]:focus:not([readonly]) + label,
+		textarea.materialize-textarea:focus:not([readonly]) + label {
+			color: #d49802;
+			transition: all .2s;
+		}
+		.checkPS, .checkS{
+			margin-bottom: 15px;
+		}
+		.checkPS input[type="checkbox"], .checkS input[type="checkbox"]{
+			display: none;
+		}
+		.checkPS label[for="exibirPS"], .checkS label[for="exibirS"]{
+			cursor: pointer;
+			margin-top: 15px;
+		}
+		.checkPS input[type="checkbox"] + label[for="exibirPS"]:before, .checkS input[type="checkbox"] + label[for="exibirS"]:before  {
+			border: 1px solid #fff;
+			content: "\00a0";
+			display: inline-block;
+			font: 26px/0.48em sans-serif;
+			height: 16px;
+			margin: 0 1em 0 0;
+			padding:0;
+			vertical-align: top;
+			width: 16px;
+		}
+		.checkPS input[type="checkbox"]:checked + label[for="exibirPS"]:before, .checkS input[type="checkbox"]:checked + label[for="exibirS"]:before{
+			background: #311b92;
+			color: #fff;
+			content: "\2713";
+			text-align: center;
+			margin: 0 1em 0 0;
+		}
+		.checkPS input[type="checkbox"]:checked + label[for="exibirPS"]:after, .checkS input[type="checkbox"]:checked + label[for="exibirS"]:after {
+			font-weight: bold;
+		}
+	</style>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+
+			jQuery('.carousel[data-type="multi"] .item').each(function(){
+				var next = jQuery(this).next();
+				if (!next.length) {
+					next = jQuery(this).siblings(':first');
+				}
+				next.children(':first-child').clone().appendTo($(this));
+
+				for (var i=0;i<1;i++) {
+					next=next.next();
+					if (!next.length) {
+						next = jQuery(this).siblings(':first');
+					}
+					next.children(':first-child').clone().appendTo(jQuery(this));
+				}
+			});
+		});
+		function info(){
+			var x = document.getElementById('informacoes');
+			var y = document.getElementById('conteudo');
+			var w = document.getElementById('alterarFoto');
+			var z = document.getElementById('configSeguranca');
+			if (x.style.display == 'none') {
+				$("#informacoes").fadeIn("slow");
+				x.style.display	= 'block';
+				y.style.display = 'none';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+			else if (x.style.display == 'block') {
+				$("#conteudo").fadeIn("slow");
+				x.style.display	= 'none';
+				y.style.display = 'block';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+		}
+		function foto(){
+			var x = document.getElementById('alterarFoto');
+			var y = document.getElementById('conteudo');
+			var w = document.getElementById('informacoes');
+			var z = document.getElementById('configSeguranca');
+			if (x.style.display == 'none') {
+				$("#alterarFoto").fadeIn("slow");
+				x.style.display	= 'block';
+				y.style.display = 'none';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+			else if (x.style.display == 'block') {
+				$("#conteudo").fadeIn("slow");
+				x.style.display	= 'none';
+				y.style.display = 'block';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+		}
+		function cog(){
+			var x = document.getElementById('configSeguranca');
+			var y = document.getElementById('conteudo');
+			var w = document.getElementById('informacoes');
+			var z = document.getElementById('alterarFoto');
+			if (x.style.display == 'none') {
+				$("#configSeguranca").fadeIn("slow");
+				x.style.display	= 'block';
+				y.style.display = 'none';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+			else if (x.style.display == 'block') {
+				$("#conteudo").fadeIn("slow");
+				x.style.display	= 'none';
+				y.style.display = 'block';
+				w.style.display = 'none';
+				z.style.display = 'none';
+			}
+		}
+		function cancel(){
+			var x = document.getElementById('configSeguranca');
+			var y = document.getElementById('conteudo');
+			var w = document.getElementById('informacoes');
+			var z = document.getElementById('alterarFoto');
+			$("#conteudo").fadeIn("slow");
+			x.style.display	= 'none';
+			y.style.display = 'block';
+			w.style.display = 'none';
+			z.style.display = 'none';
+		}
+
+		function mostrarPS(){
+			var detect = document.getElementById('exibirPS');
+			if (detect.checked == true) {
+				document.getElementById('in_psecret').type = 'text';
+			}else{
+				document.getElementById('in_psecret').type = 'password';
+			}
+		}
+		function mostrarS(){
+			var detect = document.getElementById('exibirS');
+			if (detect.checked == true) {
+				document.getElementById('in_senha').type = 'text';
+			}else{
+				document.getElementById('in_senha').type = 'password';
+			}
+		}
+	</script>
+</head>
+<body>
+	<nav class="navbar purple darken-4 navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="#" class="navbar-brand righteous-font">Wissen</a>
+			</div>
+			<div id="menu" class="navbar-collapse collapse">
+				<div class="navbar-left">
+					<form>
+						<table>
+							<tr>
+								<td>
+									<input class="form-control" placeholder="Buscar. . ." type="search" value="" name="search" id="search">
+								</td>
+								<td>
+									<button class="btn btn-lg warning-color waves-light waves-effect search" type="submit" value=""><span class="glyphicon glyphicon-search"></span></button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="" class="dropdown-toggle waves-effect waves-light text-center link" data-toggle="dropdown" role="button" aria-expanded="false"><i class="material-icons prefiz">account_circle</i><br>Nome Usuario</a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<a href="">
+									<img src="" data-src="holder.js/60x60" class="img-circle">
+									<span class="text-right">Nome do Usuario</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li><a href="" class="text-center link"><i class="material-icons prefix">star</i><br> Eventos</a></li>
+					<li class="dropdown">
+						<a href=""  class="dropdown-toggle waves-effect waves-light text-center link" data-toggle="dropdown" role="button" aria-expanded="false"><i class="material-icons prefix">more</i><br> Mais</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="">Configurações de Segurança</a></li>
+							<li><a href="">Sair</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="dados" class="container">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+			<img src="" data-src="holder.js/200x200" class="img-thumbnail">
+			<h4>Nome Usuario</h4>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left links">
+			<ul class="opcoes">
+				<li><a onclick="foto()" class="link"><span class="glyphicon glyphicon-camera"></span> Alterar Foto</a></li>
+				<li><a onclick="info()" class="link"><span class="glyphicon glyphicon-user"></span> Informações</a></li>
+				<li><a onclick="cog()" class="link"><span class="glyphicon glyphicon-cog"></span> Configurações de Segurança</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<hr>
+	</div>
+	<div id="conteudo" class="container">
+		<div class="row evseguidos">
+			<h3 class="righteous-font">Eventos Seguidos</h3>
+			<div class="carousel slide" id="carousel-evseguidos" data-ride="carousel" data-type="multi" data-interval="false">
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="carousel-col">
+							<div class="card hoverable">
+								<div class="card-image">
+									<div class="view overlay hm-white-slight z-depth-1">
+										<img src="" data-src="holder.js/500x250" class="img-responsive">
+										<a href="">
+											<div class="mask waves-effect"></div>
+										</a>
+									</div>
+								</div>
+								<div class="card-content">
+									<h5>Titulo do Evento</h5>
+								</div>
+								<div class="card-footer text-right">
+									<form name="opcoes" id="opcoes" method="POST">
+										<ul class="opcoes">
+											<div class="col-centered pull-right">
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-3">
+														<input type="radio" name="opcao" id="opcao-3">
+														<label class="n" for="opcao-3"><i class="material-icons prefix">close</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-2">
+														<input type="radio" name="opcao" id="opcao-2">
+														<label class="c" for="opcao-2"><i class="material-icons prefix">done</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-1">
+														<input type="radio" name="opcao" id="opcao-1">
+														<label class="i" for="opcao-1"><i class="material-icons prefix">star</i></label>
+													</li>
+												</div>
+											</div>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="carousel-col">
+							<div class="card hoverable">
+								<div class="card-image">
+									<div class="view overlay hm-white-slight z-depth-1">
+										<img src="" data-src="holder.js/500x250" class="img-responsive">
+										<a href="">
+											<div class="mask waves-effect"></div>
+										</a>
+									</div>
+								</div>
+								<div class="card-content">
+									<h5>Titulo do Evento</h5>
+								</div>
+								<div class="card-footer text-right">
+									<form name="opcoes" id="opcoes" method="POST">
+										<ul class="opcoes">
+											<div class="col-centered pull-right">
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-3">
+														<input type="radio" name="opcao" id="opcao-3">
+														<label class="n" for="opcao-3"><i class="material-icons prefix">close</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-2">
+														<input type="radio" name="opcao" id="opcao-2">
+														<label class="c" for="opcao-2"><i class="material-icons prefix">done</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-1">
+														<input type="radio" name="opcao" id="opcao-1">
+														<label class="i" for="opcao-1"><i class="material-icons prefix">star</i></label>
+													</li>
+												</div>
+											</div>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="carousel-col">
+							<div class="card hoverable">
+								<div class="card-image">
+									<div class="view overlay hm-white-slight z-depth-1">
+										<img src="" data-src="holder.js/500x250" class="img-responsive">
+										<a href="">
+											<div class="mask waves-effect"></div>
+										</a>
+									</div>
+								</div>
+								<div class="card-content">
+									<h5>Titulo do Evento</h5>
+								</div>
+								<div class="card-footer text-right">
+									<form name="opcoes" id="opcoes" method="POST">
+										<ul class="opcoes">
+											<div class="col-centered pull-right">
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-3">
+														<input type="radio" name="opcao" id="opcao-3">
+														<label class="n" for="opcao-3"><i class="material-icons prefix">close</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-2">
+														<input type="radio" name="opcao" id="opcao-2">
+														<label class="c" for="opcao-2"><i class="material-icons prefix">done</i></label>
+													</li>
+												</div>
+												<div class="col-xs-4 col-md-2 col-sm-3 col-lg-1">
+													<li class="opcao opcao-1">
+														<input type="radio" name="opcao" id="opcao-1">
+														<label class="i" for="opcao-1"><i class="material-icons prefix">star</i></label>
+													</li>
+												</div>
+											</div>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="left carousel-control">
+					<a href="#carousel-evseguidos" role="button" data-slide="prev">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+				</div>
+				<div class="right carousel-control">
+					<a href="#carousel-evseguidos" role="button" data-slide="next">
+						<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row mseguidores">
+			<h3 class="righteous-font">Meus Seguidores</h3>
+			<ul class="amigos">
+				<div class="col-centered">
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+						<li class="amigo text-center">
+							<a href="">
+								<img src="" data-src="holder.js/200x200" class="img-responsive">
+								<span>Nome Usuario</span>
+							</a>
+						</li>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</div>
+	<div class="container" id="alterarFoto" style="display: none;">
+		<div class="text-center">
+			<h3 class="righteous-font"><span class="glyphicon glyphicon-camera"></span> Alterar Foto</h3>
+			<form action="" method="">
+				<img src="" data-src="holder.js/200x200" class="img-thumbnail">
+				<div class="form-group">
+					<div class="input-file-container">  
+						<input class="input-file" id="my-file" type="file">
+						<label tabindex="0" for="my-file" class="input-file-trigger"><i class="material-icons prefix">add_a_photo</i></label>
+					</div>
+					<p class="file-return"></p>
+				</div>
+				<script type="text/javascript">
+					document.querySelector("html").classList.add('js');
+
+					var fileInput  = document.querySelector( ".input-file" ),  
+					button     = document.querySelector( ".input-file-trigger" ),
+					the_return = document.querySelector(".file-return");
+
+					button.addEventListener( "keydown", function( event ) {  
+						if ( event.keyCode == 13 || event.keyCode == 32 ) {  
+							fileInput.focus();  
+						}  
+					});
+					button.addEventListener( "click", function( event ) {
+						fileInput.focus();
+						return false;
+					});  
+					fileInput.addEventListener( "change", function( event ) {  
+						the_return.innerHTML = this.value;  
+					});  
+				</script>
+				<button type="submit" class="btn btn-lg deep-purple darken-4 waves-effect waves-light righteous-font"><i class="material-icons prefix">file_upload</i> Subir</button>
+			</form>
+		</div>
+	</div>
+	<div class="container" id="informacoes" style="display: none">
+		<div class="text-center">
+			<h3 class="righteous-font"><span class="glyphicon glyphicon-user"></span> Informações</h3>
+			<form action="" method="" data-toggle="validator" role="form">
+				<div class="edicao">
+					<input type="hidden" name="id">
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_nome"><i class="material-icons prefix">perm_identity</i> Nome</label>
+						<input type="text" name="nome" id="in_nome">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_sobrenome"><i class="material-icons prefix">perm_identity</i> Sobrenome</label>
+						<input type="text" name="sobrenome" id="in_sobrenome">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_idade"><i class="material-icons prefix">date_range</i> Idade</label>
+						<input type="text" name="idade" id="in_idade">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_celular"><i class="material-icons prefix">smartphone</i> Celular</label>
+						<input type="number" name="celular" id="in_celular">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_cep"><i class="material-icons prefix">map</i> CEP</label>
+						<input type="number" name="cep" id="in_cep">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_uf"><i class="material-icons prefix">map</i> Estado</label>
+						<input type="text" name="estado" id="in_uf">
+					</div>
+					<div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<label for="in_cidade"><i class="material-icons prefix">map</i> Cidade</label>
+						<input type="text" name="cidade" id="in_cidade">
+					</div>
+					<div class="text-center col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<button type="submit" class="btn btn-lg deep-purple darken-4 waves-effect waves-light righteous-font">Salvar</button>
+					</div>
+					<div class="text-left col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<button type="button" class="btn btn-lg btn-warning waves-effect waves-light righteous-font" onclick="cancel()">Cancelar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container" id="configSeguranca" style="display: none;">
+		<div class="text-center">
+			<h3 class="righteous-font"><span class="glyphicon glyphicon-cog"></span> Configurações de Segurança</h3>
+			<form action="" method="" data-toggle="validator" role="form">
+				<div class="cog">
+					<input type="hidden" name="id">
+					<div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<label for="in_email"><i class="material-icons prefix">email</i> E-mail</label>
+						<input type="email" name="" id="in_email">
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_psecret"><i class="material-icons prefix">lock</i> Palavra Secreta</label>
+						<input type="password" name="" id="in_psecret">
+						<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 checkPS text-left">
+							<input type="checkbox" name="exibir" id="exibirPS" onclick="mostrarPS()" />
+							<label for="exibirPS"> Exibir Palavra Secreta</label>
+						</div>
+					</div>
+					<div class="form-group col-lg-5 col-md-5 col-sm-5 col-xs-12">
+						<label for="in_senha"><i class="material-icons prefix">lock</i> Senha</label>
+						<input type="password" name="" id="in_senha">
+						<div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12 checkS text-left">
+							<input type="checkbox" name="exibir" id="exibirS" onclick="mostrarS()" />
+							<label for="exibirS"> Exibir Senha</label>
+						</div>
+					</div>
+					<div class="form-group col-lg-8 col-md-8 col-sm-8 col-xs-12">
+						<label class="disable" for="in_csenha"><i class="material-icons prefix">lock</i> Confirmar nova Senha</label>
+						<input type="password" name="" id="in_csenha" class="disable">
+					</div>
+					<div class="text-center col-lg-8 col-md-8 col-sm-8 col-xs-12 botao">
+						<button type="submit" class="btn btn-lg deep-purple darken-4 waves-effect waves-light righteous-font">Salvar</button>
+					</div>
+					<div class="text-left col-lg-2 col-md-2 col-sm-2 col-xs-12">
+						<button type="button" class="btn btn-lg btn-warning waves-effect waves-light righteous-font" onclick="cancel()">Cancelar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="col-xs-12 col-md-4 col-sm-6">
+				<img class="img-responsive" src="" data-src="holder.js/250x80">
+			</div>
+			<div class="col-xs-12 col-md-4 col-sm-3">
+				<p class="text-muted">© 2017 BlindTech Development Group Inc.</p>
+			</div>
+			<div class="col-xs-12 col-md-4 col-sm-3">
+				<img src="" class="img-responsive" data-src="holder.js/250x80">
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

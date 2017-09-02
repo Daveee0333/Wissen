@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wissen</title>
+	<!-- JavaScript -->
+	<script type="text/javascript" src="./JS/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./MDB_3.4.1/MDB Free/js/mdb.min.js"></script>
+	<script type="text/javascript" src="./Holder/holder.min.js"></script>
+	<script type="text/javascript" src="./JS/validator.min.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./MDB_3.4.1/MDB Free/css/mdb.min.css">
+	<link rel="stylesheet" type="text/css" href="./CSS/cadastro.css">
+	<!-- Fontes -->
+	<link rel="stylesheet" type="text/css" href="./CSS/Fontes.css">
+</head>
+<body id="wissen">
+	<div id="conteudo" class="container">
+		<div id="form-header" class="text-center">
+			<h3 class="righteous-font">Complete Seu Perfil</h3>
+		</div>
+		<hr>
+		<div class="col-centered">
+			<div class="text-left" id="form-body">
+				<form class="col-md-8 col-lg-8 col-sm-8 col-xs-12" method="post" data-toggle="validator" role="form">
+					<div class="row">
+						<div class="form-group">
+							<label for="icon_name">Nome</label>
+							<input id="icon_name" class="form-control" type="text" name="nome" data-error="Preencha este Campo!" required>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<label for="icon_sobrenome">Sobrenome</label>
+							<input id="icon_sobrenome" type="text" class="form-control" name="sobrenome" data-error="Preencha este Campo!" required>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<label for="icon_date">Idade</label>
+							<input id="icon_date" type="date" class="form-control" name="idade" data-minlength="2" required>
+						</div>
+						<div class="form-group">
+							<label>Sexo</label>
+							<div class="sexo">
+								<input type="radio" value="masculino" name="sexo" id="masc" data-error="Selecione uma das opções." required>
+								<label for="masc">Masculino</label>
+								<input type="radio" value="feminino" name="sexo" id="femi" data-error="Selecione uma das opções." required>
+								<label for="femi">Feminino</label>
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="icon_secret">Palavra Secreta</label>
+							<input id="icon_secret" type="text" class="form-control" name="secret" data-error="Isso é importante" required>
+							<div class="help-block with-errors"></div>
+						</div>
+						<div class="form-group">
+							<label for="icon_phone">Celular</label>
+							<input id="icon_phone" type="number" class="form-control" name="celular" data-minlength="13" required>
+						</div>
+						<div class="form-group">
+							<label for="icon_cep">CEP</label>
+							<input id="icon_cep" type="number" class="form-control" name="cep" data-minlength="9" required>
+						</div>
+						<div class="form-group">
+							<label for="icon_uf">Estado</label>
+							<input type="text" id="icon_uf" name="uf">
+						</div>
+						<div class="form-group">
+							<label for="icon_cidade">Cidade</label>
+							<input type="text" id="icon_cidade" name="cidade">
+						</div>
+						<label>Adicionar Foto</label>
+						<div class="form-group">
+							<div class="input-file-container">  
+								<input class="input-file" id="my-file" type="file">
+								<label tabindex="0" for="my-file" class="input-file-trigger"><i class="material-icons prefix">add_a_photo</i></label>
+							</div>
+							<p class="file-return"></p>
+						</div>
+						<script type="text/javascript">
+							document.querySelector("html").classList.add('js');
+
+							var fileInput  = document.querySelector( ".input-file" ),  
+							button     = document.querySelector( ".input-file-trigger" ),
+							the_return = document.querySelector(".file-return");
+
+							button.addEventListener( "keydown", function( event ) {  
+								if ( event.keyCode == 13 || event.keyCode == 32 ) {  
+									fileInput.focus();  
+								}  
+							});
+							button.addEventListener( "click", function( event ) {
+								fileInput.focus();
+								return false;
+							});  
+							fileInput.addEventListener( "change", function( event ) {  
+								the_return.innerHTML = this.value;  
+							});  
+						</script>
+						<div class="text-center">
+							<button type="submit" id="botao" class="btn waves-effect waves-light righteous-font">Cadastrar</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
